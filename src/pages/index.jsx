@@ -3,11 +3,14 @@ import { ShopItem } from '../components/ShopItem';
 import '../global.css';
 import './index.css';
 
+// TODO nezapomeňte nastavit svůj login – jednoznačný identifikátor (třeba název účtu na GitHubu)
+//const login = ""
+
 const response = await fetch(
-  'https://nakupy.kodim.app/api/me/week/mon',
+  'https://nakupy.czechitas.dev/api/mon',
   {
     headers: {
-      // Authorization: Vaše jméno,
+      Authorization: login,
     },
   },
 );
@@ -59,12 +62,12 @@ document.querySelector('.newitem-form')
     };
 
     await fetch(
-      'https://nakupy.kodim.app/api/me/week/mon/items',
+      'https://nakupy.czechitas.dev/api/mon',
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // Authorization: Vaše jméno,
+          Authorization: login,
         },
         body: JSON.stringify(body),
       },
