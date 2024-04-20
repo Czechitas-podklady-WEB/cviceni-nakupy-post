@@ -14,8 +14,7 @@ const response = await fetch(
     },
   },
 );
-const data = await response.json();
-const list = data.result.items;
+const list = await response.json();
 
 const HomePage = () => (
   <>
